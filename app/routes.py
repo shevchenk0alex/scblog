@@ -18,6 +18,14 @@ def index():
         {
             'author': {'username': 'Иван'},
             'body': 'А я делал конструкции на базе Arduino!'
+        },
+        {
+            'author': {'username': 'Снежана'},
+            'body': 'А я сегодня не пришла!'
+        },
+        {
+            'author': {'username': 'Илья'},
+            'body': 'А у меня день рождения!'
         }
     ]
     return render_template('index.html', title='Главная', user=user, posts=posts)
@@ -25,6 +33,10 @@ def index():
 @app.route('/about')
 def about():
     return "Еще не придумали"
+    
+@app.route('/robo')
+def robo():
+    return "робототехника"
     
 @app.route('/login', methods=['GET', 'POST'])
 def login():
