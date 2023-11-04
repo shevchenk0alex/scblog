@@ -1,0 +1,17 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - SchoolBlog</title>
+        {% else %}
+        <title>Добро пожаловать в школьный блог!</title>
+        {% endif %}
+    </head>
+    <body>
+		<div>SchoolBlog: 
+			<a href="/index">Главная</a>
+			<a href="/about">О нас</a>
+		</div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>	
+</html>

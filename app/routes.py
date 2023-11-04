@@ -20,3 +20,7 @@ def index():
         }
     ]
     return render_template('index.html', title='Главная', user=user, posts=posts)
+    
+@app.route('/about')
+def about():
+    return "Еще не придумали"
