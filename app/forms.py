@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 import sqlalchemy as sa
 from app import db
 from app.models import User
@@ -27,7 +27,11 @@ class RegistrationForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     username = StringField('Логин', validators=[DataRequired()])
-    #email = StringField('Электронная почта',validators=[DataRequired()])
     password = PasswordField('Пароль', validators=[DataRequired()])
     remember_me = BooleanField('Запомнить')
     submit = SubmitField('Войти')
+    
+class EditProfileForm(FlaskForm):
+    username = StringField('Пользователь', validators=[DataRequired()])
+    about_me = TextAreaField('О себе', validators=[Length(min=0, max=140)])
+    submit = SubmitField('Сохранить')
