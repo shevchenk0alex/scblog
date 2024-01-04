@@ -6,6 +6,7 @@ import sqlalchemy.orm as so
 from app import db
 from app import login
 from flask_login import UserMixin
+from hashlib import md5
 
 @login.user_loader
 def load_user(id):
@@ -22,6 +23,10 @@ class User(UserMixin, db.Model):
     posts: so.WriteOnlyMapped['Post'] = so.relationship(
         back_populates='author')
         
+    def avatar(self, size):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return f'https://www.gravatar.com/avatar/{digest}?d=identicon&s={size}'    
+                
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
