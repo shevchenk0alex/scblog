@@ -50,3 +50,9 @@ class EditProfileForm(FlaskForm):
               
 class EmptyForm(FlaskForm):
     submit = SubmitField('ОК')
+    
+class PostForm(FlaskForm):
+    post = TextAreaField('Введи текст', validators=[
+        DataRequired(), Length(min = 2, max = 140)])
+    submit = SubmitField('ОК')
+    
