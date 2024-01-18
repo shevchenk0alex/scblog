@@ -145,3 +145,10 @@ def unfollow(username):
         return redirect(url_for('user', username=username))
     else:
         return redirect(url_for('index'))
+        
+@app.route('/flow')
+@login_required
+def flow():
+    query = sa.select(Post).order_by(Post.timestamp.desc())
+    posts = db.session.scalars(query).all()
+    return render_template('index.html', title='Поток', posts=posts)

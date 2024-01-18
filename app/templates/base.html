@@ -9,6 +9,7 @@
     <body>
 		<div>SchoolBlog: 
 			<a href="{{ url_for('index') }}">Главная</a>
+			<a href="{{ url_for('flow') }}">Поток</a>
 			<a href="{{ url_for('robo') }}">Робототехника</a>
 			<a href="{{ url_for('about') }}">О нас</a>
 			{% if current_user.is_anonymous %}
