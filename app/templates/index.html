@@ -18,6 +18,12 @@
 	{% endif %}
 	
 	{% for post in posts %}
-    <div><p>{{ post.author.username }} пишет: <b>{{ post.body }}</b></p></div>
+		{% include '_post.html' %}
     {% endfor %}
+	{% if prev_url %}
+    <a href="{{ prev_url }}">Вперед</a>
+    {% endif %}
+    {% if next_url %}
+    <a href="{{ next_url }}">Назад</a>
+    {% endif %}
 {% endblock %}
