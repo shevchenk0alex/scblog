@@ -29,29 +29,7 @@ def index():
         flash('Ваше сообщение опубликовано!')
         return redirect(url_for('index'))
     
-    #user = {'username': 'Алексей'}
-    posts = [
-        {
-            'author': {'username': 'Вадим'},
-            'body': 'Сегодня я распечатал свою коробочку!'
-        },
-        {
-            'author': {'username': 'Миша'},
-            'body': 'Я сделал игру на Scratch!'
-        }, 
-        {
-            'author': {'username': 'Иван'},
-            'body': 'А я делал конструкции на базе Arduino!'
-        },
-        {
-            'author': {'username': 'Снежана'},
-            'body': 'А я сегодня не пришла!'
-        },
-        {
-            'author': {'username': 'Илья'},
-            'body': 'А у меня день рождения!'
-        }
-    ]
+    posts = db.session.scalars(current_user.following_posts()).all()
     return render_template('index.html', title='Главная', form=form, posts=posts)
     
 @app.route('/about')
