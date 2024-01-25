@@ -19,7 +19,11 @@
             {% endfor %}
         </p>
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-		<p>Нет учетной записи? <a href="{{ url_for('register') }}">Зарегистрируйся!</a></p>
-        <p>{{ form.submit() }}</p>
+		<p>Нет учетной записи? <a href="{{ url_for('register') }}">Зарегистрируйся!</a></p>        
+		<p>
+			Забыли пароль?
+			<a href="{{ url_for('reset_password_request') }}">Сброс пароля</a>
+		</p>
+		<p>{{ form.submit() }}</p>
     </form>
  {% endblock %}
