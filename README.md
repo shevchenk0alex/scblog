@@ -1,2 +1,2 @@
-my blog on Flask
-''''
+my SchoolBlog on Flask
+
