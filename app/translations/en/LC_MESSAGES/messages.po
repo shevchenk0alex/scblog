@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-02-03 11:18+0300\n"
-"PO-Revision-Date: 2024-02-03 11:20+0300\n"
+"POT-Creation-Date: 2024-02-15 16:12+0300\n"
+"PO-Revision-Date: 2024-02-15 16:15+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -18,7 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 
-#: app/__init__.py:24
+#: app/__init__.py:25
 msgid "Пожалуйста, войдите, чтобы открыть эту страницу."
 msgstr "Please log in to access this page."
+
+#: app/forms.py:30
+msgid "Логин"
+msgstr "Login"
 

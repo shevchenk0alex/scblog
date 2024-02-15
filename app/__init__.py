@@ -22,7 +22,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
-login.login_message = _l("Пожалуйста, войдите, чтобы открыть эту страницу.")
+login.login_message = _l('Пожалуйста, войдите, чтобы открыть эту страницу.')
 mail = Mail(app)
 moment = Moment(app)
 babel = Babel(app, locale_selector=get_locale)

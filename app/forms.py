@@ -4,6 +4,7 @@ from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Le
 import sqlalchemy as sa
 from app import db
 from app.models import User
+from flask_babel import lazy_gettext as _l
 
 class RegistrationForm(FlaskForm):
     username = StringField('Логин', validators=[DataRequired()])
@@ -26,7 +27,7 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('Данная почта уже используется. Введите другой адрес')
 
 class LoginForm(FlaskForm):
-    username = StringField('Логин', validators=[DataRequired()])
+    username = StringField(_l('Логин'), validators=[DataRequired()])
     password = PasswordField('Пароль', validators=[DataRequired()])
     remember_me = BooleanField('Запомнить')
     submit = SubmitField('Войти')
